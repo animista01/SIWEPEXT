@@ -1,0 +1,42 @@
+<ion-side-menus>
+    
+  <ion-side-menu-content>
+    <ion-header-bar class="bar-positive">
+      <button class="button button-icon ion-navicon" ng-click="toggleLeft()" ng-hide="$exposeAside.active"></button>
+      <h1 class="title">Proyectos</h1>
+      <button class="button button-icon ion-plus" ng-click="newProject()"></button>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Search" ng-model="data.searchQuery">
+        </label>
+      </div>
+
+      <div class="list">
+        <a class="item item-avatar" ng-repeat="proyecto in proyectos | filter: data.searchQuery" href="#/project/{{proyecto.id}}">
+          <img src="http://www.universitarios.co/wp-content/uploads/2012/03/simon-bolivar.jpg">
+          <h2>{{proyecto.tittle}}</h2>
+          <p>{{proyecto.text}}</p>
+          <p>{{proyecto.author}}</p>
+        </a>
+
+      </div>
+    </ion-content>
+  </ion-side-menu-content>
+
+  <ion-side-menu expose-aside-when="large">
+    <ion-header-bar class="bar-royal">
+      <h1 class="title">Opciones</h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="list">
+        <div class="item">
+          Proyectos
+        </div>
+      </div>
+    </ion-content>
+  </ion-side-menu>
+  
+</ion-side-menus>

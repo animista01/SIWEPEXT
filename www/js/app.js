@@ -44,17 +44,31 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
 .config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('home', {
-      url: '/home',
-      templateUrl: 'templates/home.html',
-      controller: 'HomeCtrl'
+    .state('abs', {
+      url: '/abs',
+      abstract: true,
+      templateUrl: 'templates/menu.html'
     })
 
-    .state('projectHome', {
+    .state('abs.home', {
+      url: '/home',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/home.html',
+          controller: 'HomeCtrl'
+        }
+      }
+    })
+
+    .state('abs.projectHome', {
       url: '/project/:projectId',
-      templateUrl: 'templates/project.html',
-      controller: 'ProjectCtrl'
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/project.html',
+          controller: 'ProjectCtrl'
+        }
+      }
     })
     
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/abs/home');
 });

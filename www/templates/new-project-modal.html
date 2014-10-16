@@ -3,7 +3,7 @@
     <h1 class="title">Nuevo proyecto (Consolidado)</h1>
     <button class="button button-icon ion-chevron-down" ng-click="newProjectModalClose()"></button>
   </ion-header-bar>
-  <ion-content has-header="true" scroll="true">
+  <ion-content has-header="true" scroll="false">
     <form ng-submit="newPago(pago)">
       <div class="list list-inset">
         <label class="item item-input item-select">
@@ -38,13 +38,13 @@
           </select>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.comentario" placeholder="Nombre"></textarea>
+          <textarea ng-model="pago.name" placeholder="Nombre"></textarea>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.comentario" placeholder="Objetivo"></textarea>
+          <textarea ng-model="pago.objective" placeholder="Objetivo"></textarea>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.comentario" placeholder="Descripcion"></textarea>
+          <textarea ng-model="pago.description" placeholder="Descripcion"></textarea>
         </label>
       </div>
       <div class="padding">

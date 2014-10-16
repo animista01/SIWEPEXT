@@ -27,6 +27,12 @@ angular.module('starter.controllers', ['ionic'])
   	});
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
-  $scope.friends = Friends.all();
+.controller('ProjectCtrl', function ($scope, $ionicNavBarDelegate) {
+	$scope.goBack = function () {
+	    $ionicNavBarDelegate.back();
+	}
+
+	$scope.newSeguimiento = function () {
+		
+	}
 });

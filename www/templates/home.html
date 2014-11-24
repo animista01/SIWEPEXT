@@ -9,16 +9,16 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search" ng-model="data.searchQuery">
+        <input type="text" placeholder="Busqueda" ng-model="data.searchQuery">
       </label>
     </div>
 
     <div class="list">
-      <a class="item item-avatar" ng-repeat="proyecto in proyectos | filter: data.searchQuery" href="#/abs/project/{{proyecto.id}}">
-        <img src="http://www.universitarios.co/wp-content/uploads/2012/03/simon-bolivar.jpg">
-        <h2>{{proyecto.tittle}}</h2>
+      <a class="item item-avatar" ng-repeat="proyecto in projects | filter: data.searchQuery" href="#/abs/project/{{proyecto.id}}">
+        <img src="img/unisimon.jpg">
+        <h2>{{proyecto.title}}</h2>
         <p>{{proyecto.text}}</p>
-        <p>{{proyecto.author}}</p>
+        <p>Lider: {{proyecto.lider}}</p>
       </a>
     </div>
   </ion-content>

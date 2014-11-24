@@ -1,55 +1,42 @@
 <div class="modal">
   <ion-header-bar class="bar bar-header bar-balanced">
-    <h1 class="title">Nuevo proyecto (Consolidado)</h1>
+    <h1 class="title">Nuevo proyecto</h1>
     <button class="button button-icon ion-chevron-down" ng-click="newProjectModalClose()"></button>
   </ion-header-bar>
-  <ion-content has-header="true" scroll="false">
-    <form ng-submit="newPago(pago)">
+  <ion-content has-header="true">
+    <form ng-submit="saveProject(project)">
       <div class="list list-inset">
-        <label class="item item-input item-select">
-          <div class="input-label">Codigo SNIES</div>
-          <select>
-            <option>66</option>
-            <option>90</option>
-            <option>93</option>
-            <option>94</option>
-            <option>99</option>
-          </select>
-        </label>
-        <label class="item item-input item-select">
-          <div class="input-label">Fecha del consolidado</div>
-          <select>
-            <option>2012-1</option>
-            <option>2012-2</option>
-            <option>2013-1</option>
-            <option>2013-2</option>
-            <option>2014-1</option>
-            <option selected>2014-2</option>
-          </select>
-        </label>
-        <label class="item item-input item-select">
-          <div class="input-label">Programa social</div>
-          <select>
-            <option>Alfabetización</option>
-            <option>Años de Plenitud</option>
-            <option>Empresa Medio Ambiente.</option>
-            <option>Interacción Social</option>
-            <option>Salud Familiar.</option>
-          </select>
+        <label class="item item-input">
+          <div class="input-label">Fecha:</div>
+          <input type="date" ng-model="project.fechaCreacion"/>
+        </label> 
+        <label class="item item-input">
+          <div class="input-label">Nombre programa social:</div>
+          <input type="text" ng-model="project.nombreProgramaSoci"/>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.name" placeholder="Nombre"></textarea>
+          <div class="input-label">Nombre proyecto:</div>
+          <input type="text" ng-model="project.title"/>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.objective" placeholder="Objetivo"></textarea>
+          <textarea ng-model="project.text" placeholder="Descripción proyecto"></textarea>
         </label>
         <label class="item item-input">
-          <textarea ng-model="pago.description" placeholder="Descripcion"></textarea>
+          <div class="input-label">Líder proyecto:</div>
+          <input type="text" ng-model="project.lider"/>
+        </label>
+        <label class="item item-input">
+          <div class="input-label">Fecha inicio:</div>
+          <input type="date" ng-model="project.fechaInicio"/>
+        </label>
+        <label class="item item-input">
+          <div class="input-label">Fecha fin:</div>
+          <input type="date" ng-model="project.fechaFin"/>
         </label>
       </div>
       <div class="padding">
         <button class="button button-block button-positive activated" type="submit">
-          Guardar
+          Crear
         </button>
       </div>
     </form>

@@ -1,31 +1,13 @@
 <ion-view title="Seguimientos">
 	<div class="bar bar-header bar-positive">
     	<ion-nav-buttons side="right">
-    		<button class="button button-icon ion-edit" ng-click="newSeguimiento()"></button>
+    		<button class="button button-icon ion-edit" ng-click="newSeguimientoModal()"></button>
     	</ion-nav-buttons>
 	</div>
 	<ion-content class="has-header">
 		<ion-list>
-		  <ion-item>
-			<a>Seguimiento 1</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 2</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 3</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 4</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 5</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 6</a>      
-		  </ion-item>
-		  <ion-item>
-			<a>Seguimiento 7</a>      
+		  <ion-item ng-repeat="segui in seguimientos" ng-click="showInfo({{segui.id}})">
+			{{segui.date}}, {{segui.name}}    
 		  </ion-item>
 		</ion-list>
 	</ion-content>

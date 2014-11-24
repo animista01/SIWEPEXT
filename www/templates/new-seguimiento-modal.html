@@ -1,0 +1,32 @@
+<div class="modal">
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Nuevo seguimiento(Consolidado)</h1>
+    <button class="button button-icon ion-chevron-down" ng-click="modalClose()"></button>
+  </ion-header-bar>
+  <ion-content has-header="true">
+    <form ng-submit="newSeguimiento(seguimiento)">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <div class="input-label">Fecha:</div>
+          <input type="date" ng-model="seguimiento.fecha" required />
+        </label> 
+        <div class="item item-divider"></div>
+        <label class="item item-input">
+          <div class="input-label">Nombre actividad:</div>
+          <input type="text" ng-model="seguimiento.name" required />
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Resultados" ng-model="seguimiento.result" required></textarea>
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Observaciones" ng-model="seguimiento.observ" required></textarea>
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-balanced activated" type="submit">
+          Guardar seguimiento
+        </button>
+      </div>
+    </form>
+  </ion-content>
+</div>

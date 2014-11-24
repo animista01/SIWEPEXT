@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic', 'starter.controllers'])
+angular.module('ionicApp', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function ($ionicPlatform) {
 
@@ -44,6 +44,11 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
 .config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+    .state('login', {
+      url: "/login",
+      templateUrl: "templates/login.html"
+    })
+
     .state('abs', {
       url: '/abs',
       abstract: true,
@@ -70,5 +75,5 @@ angular.module('ionicApp', ['ionic', 'starter.controllers'])
       }
     })
     
-    $urlRouterProvider.otherwise('/abs/home');
+    $urlRouterProvider.otherwise('/login');
 });
